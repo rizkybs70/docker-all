@@ -1,0 +1,10 @@
+docker run -d \
+    --name ftp-server \
+    --detach \
+    --env FTP_USER=rizkybs \
+    --env FTP_PASS=matematika \
+    --network brid \
+	--hostname server1 \
+    --volume /data:/home/rizkybs/SHARE \
+	--restart unless-stopped \
+    garethflowers/ftp-server

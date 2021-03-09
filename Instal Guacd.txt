@@ -1,0 +1,7 @@
+docker run \
+  --name=guacd \
+  --net=brid \
+  -p 8082:8080 \
+  -v gc-conf:/config \
+  --restart unless-stopped \
+  oznu/guacamole:1.0.0-armhf

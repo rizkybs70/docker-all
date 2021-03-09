@@ -1,0 +1,8 @@
+docker run -d \
+    --name rutorrent \
+    -p 7005:8080 \
+    -p 55000:55000 \
+    -v /root/rutorrent:/data \
+    -e USERNAME=admin \
+    -e PASSWORD=anjaymabar \
+    gists/rutorrent:latest

@@ -1,0 +1,25 @@
+docker create \
+  --name=smokeping \
+  --net=brid \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Jakarta \
+  -p 7000:80 \
+  -v smokeping-config:/config \
+  -v smokeping-data:/data \
+  --restart unless-stopped \
+  linuxserver/smokeping
+  
+  
+  
+docker create \
+  --name=smokeping \
+  --net=brid \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Jakarta \
+  -p 7000:80 \
+  -v /root/smokeping/config:/config \
+  -v /root/smokeping/data:/data \
+  --restart unless-stopped \
+  linuxserver/smokeping

@@ -1,0 +1,10 @@
+docker run -d \
+  --name=nginx \
+  -e PUID=1040 \
+  -e PGID=1040 \
+  -e TZ=Asia/Jakarta \
+  -p 81:80 \
+  -p 1443:443 \
+  -v /root/nginx:/config \
+  --restart unless-stopped \
+  linuxserver/nginx:latest

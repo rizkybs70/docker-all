@@ -1,0 +1,30 @@
+Dengan File Manager (port tidak bisa dirubah)
+file-m nya admin/admin
+
+docker run -d \
+--name aria2-ui \
+--net=brid \
+-p 7001:7001 \
+-v /root/aria2/download:/data \
+-v /root/aria2/conf:/conf \
+-v /root/aria2/key:/app/conf/key \
+--restart unless-stopped \
+dyanlaksma/aria2-ui-arm64:latest
+
+ip-server:7001/ui
+
+Tanpa File Manager (port tidak bisa dirubah)
+docker run -d \
+--name aria2-ng \
+--net=brid \
+-p 6801:80 \
+-p 6800:6800 \
+-v /root/aria2/download:/data \
+-v /root/aria2/conf:/conf \
+redwid/aria2-ng:arm64v8_1.1.4
+  
+Webui Aria2
+https://github.com/ziahamza/webui-aria2 (source)
+
+sudah disett
+https://github.com/rizkybs70/webaria2ku.git 

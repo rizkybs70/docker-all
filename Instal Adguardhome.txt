@@ -1,0 +1,1 @@
+docker run --name adguardhome --network=mvl --ip=192.168.99.17 -v adguard-data:/opt/adguardhome/work -v adguard-conf:/opt/adguardhome/conf -p 53:53/tcp -p 53:53/udp -p 67:67/udp -p 69:68/tcp -p 69:68/udp -p 80:80/tcp -p 443:443/tcp -p 853:853/tcp -p 3000:3000/tcp --restart=always -d adguard/adguardhome:edge

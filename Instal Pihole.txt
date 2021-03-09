@@ -1,0 +1,12 @@
+docker run -it -p 67:67 -p 8080:80 -p 8079:443 -p 53:53/tcp -p 53:53/udp --name=pihole --network piholee -v pihole-data:/etc/pihole -v pihole-dnsmasq:/etc/dnsmasq.d --restart=always rizkybs70/pihole-armbian
+
+RESET PASSWORD
+docker exec -it pihole /bin/bash pihole -a -p
+
+
+@@@ Step biar latest @@@
+-Masuk portainer
+-Pull pihole/pihole:latest
+-Ganti imagename ke pihole/pihole:latest
+-sesuaikan setting lainnya
+-Done

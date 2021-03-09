@@ -1,0 +1,20 @@
+docker run -d \
+    --name=cowrie-honeypot \
+    --network=brid \
+	--hostname=server \
+    --restart=always \
+	-p 2222:2222/tcp \
+	-p 2323:2223/tcp \
+    -e COWRIE_TELNET_ENABLED=yes \
+    -e TZ=Asia/Jakarta \
+    -e PUID=2222 \
+    -e PGID=2222 \
+	-v cowrie-etc:/cowrie/cowrie-git/etc \
+	-v cowrie-var:/cowrie/cowrie-git/var \
+    garfieldwtf/cowrie:latest
+	
+	
+	
+	
+	
+Jangan lupa ambil file backup setting dari folder Cowrie backup settings

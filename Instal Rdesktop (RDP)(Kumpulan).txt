@@ -1,0 +1,10 @@
+docker create \
+  --name=rdesktop \
+  --net=desktop \
+  -e PUID=1003 \
+  -e PGID=1003 \
+  -e TZ=Asia/Jakarta \
+  -p 3389:3389 \
+  -v rdesktop-conf:/config \
+  --restart unless-stopped \
+  linuxserver/rdesktop:arm64v8-xfce-bionic

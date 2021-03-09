@@ -1,0 +1,3 @@
+docker run --name=green-tunnel --net=brid -p 8000:8000 sadeghhayeri/green-tunnel:arm-latest
+
+dijadikan web proxy ip:8000

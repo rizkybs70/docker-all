@@ -1,0 +1,15 @@
+Installnya	:
+git clone https://github.com/fjh1997/docker_named_volume_backup.git docker_volumer
+
+How to use :
+cd ./docker_volumer
+
+Backup :
+#sudo backup_docker_volume.sh <volumn_name> <tar_file>
+bash ./backup_docker_volume.sh pihole-data pihole-data.tar
+
+
+
+Restore :
+#sudo restore_docker_volume.sh <volumn_name> <tar_file>
+bash ./restore_docker_volume.sh workx workini.tar

@@ -1,0 +1,12 @@
+Referensi cari DNSServer buat DNScrypt
+https://dnscrypt.info/public-servers
+https://kb.adguard.com/en/general/dns-providers
+dnscrypt-proxy.toml ada di folder
+
+docker run -d \
+    --name dnscrypt \
+	-e TZ=Asia/Jakarta \
+    -p 5353:5353/tcp \
+    -p 5353:5353/udp \
+    -v /root/dnscrypt/dnscrypt-proxy.toml:/etc/dnscrypt-proxy/dnscrypt-proxy.toml \
+    gists/dnscrypt-proxy:latest

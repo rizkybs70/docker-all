@@ -1,0 +1,6 @@
+docker run -d --name=nextcloud \
+  -p 7002:80 \
+  --net=brid \
+  -v nextcloud-data:/var/www/html \
+  --restart unless-stopped \
+  arm64v8/nextcloud

@@ -1,0 +1,5 @@
+docker run -d --name dockupdater \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  dockupdater/dockupdater
+  
+ Nanti saat container itu jalan otomatis langsung update

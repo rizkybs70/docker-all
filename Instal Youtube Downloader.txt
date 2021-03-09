@@ -1,0 +1,14 @@
+docker run -d --name=ytb-dl \
+  -p 8081:8080 \
+  --net=brid \
+  -v /mnt/smb:/youtube-dl \
+  -e PUID=1010 \
+  -e PGID=1010 \
+  -e TZ=Asia/Jakarta \
+  -e YTBDL_O="%(title)s - [%(id)s].%(ext)s" \
+  -e YTBDL_F=bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4] \
+  --restart unless-stopped \
+  wiserain/youtube-dl-server
+  
+  
+Access http://192.168.99.8:8081/youtube-dl/

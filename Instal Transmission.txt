@@ -1,0 +1,16 @@
+docker create \
+  --name=transmission \
+  --net=brid \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Jakarta \
+  -e USER=rizkybs \
+  -e PASS=matematika \
+  -p 9091:9091 \
+  -p 51413:51413 \
+  -p 51413:51413/udp \
+  -v /root/transmission/conf:/config \
+  -v /home/rizkybs/SHARE/HDD/Download:/downloads \
+  -v /root/transmission/watch:/watch \
+  --restart unless-stopped \
+  linuxserver/transmission

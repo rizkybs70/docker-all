@@ -1,0 +1,11 @@
+docker create \
+  --name=wireshark \
+  --net=brid \
+  --cap-add=NET_ADMIN \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Jakarta \
+  -p 7012:3000 \
+  -v wireshark-config:/config \
+  --restart unless-stopped \
+  linuxserver/wireshark

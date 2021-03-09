@@ -1,0 +1,17 @@
+docker create \
+  --name=webserver \
+  --net=brid \
+  -p 81:80 \
+  -p 441:443 \
+  -v /root/webserver:/var/www/html \
+  --restart always \
+  arm64v8/php:7.2-apache-stretch
+  
+  
+Klo install mikhmon jangan lupa kasih run
+
+Klo dari portainer
+chown -R www-data:www-data /var/www/html/mikhmon
+
+Dari terminal
+docker exec -it webserver chown -R www-data:www-data /var/www/html/mikhmon

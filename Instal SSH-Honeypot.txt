@@ -1,0 +1,11 @@
+docker run -d \
+    --network=brid \
+    --cap-add=NET_ADMIN \
+    --restart=always \
+    --read-only \
+    --name=ssh-honeypotd \
+	-p 122:122/tcp \
+    -e ADDRESS=0.0.0.0 \
+	-e TZ=Asia/Jakarta \
+    -e PORT=122 \
+    wildwildangel/ssh-honeypotd:latest

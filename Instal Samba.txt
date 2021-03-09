@@ -1,0 +1,19 @@
+peruntukan server2
+docker run -d --name=samba --net=brid  -p 137:137/udp -p 138:138/udp -p 139:139 -p 445:445 -p 445:445/udp --hostname 'server2' -v /mnt/smb:/share/folder  elswork/samba:3.1.1 -u "rizkybs:matematika" -s "FileShare:/share/folder:rw:rizkybs"
+
+'-u' 'rizkybs:matematika' '-s' 'FileShare:/share/folder:rw:rizkybs' '-u' 'tamu:anjaymabar' '-s' 'Tamu:/share/tamu:rw:tamu'
+
+
+
+###for server1###
+
+2 Folder (+Tamu)
+
+docker run -d --name=samba2 --net=brid  -p 137:137/udp -p 138:138/udp -p 139:139 -p 445:445 -p 445:445/udp --hostname 'server2' -v /home/rizkybs/SHARE:/share/folder -v /home/rizkybs/SHARE/tamu:/share/tamu  elswork/samba:3.1.1 -u "rizkybs:matematika" -s "share:/share/folder:rw:rizkybs"  -u "tamu:anjaymabar" -s "Tamu:/share/tamu:rw:tamu"
+
+
+share + hdd (no tamu)
+
+docker run -d --name=samba2 --net=brid  -p 137:137/udp -p 138:138/udp -p 139:139 -p 445:445 -p 445:445/udp --hostname 'server2' -v /home/rizkybs/SHARE:/share/folder -v /home/rizkybs/SHARE/HDD:/share/hdd  elswork/samba:3.1.1 -u "rizkybs:matematika" -s "share:/share/folder:rw:rizkybs"  -s "HDD:/share/tamu:rw:rizkybs"
+
+'-u' 'rizkybs:matematika' '-s' 'share:/share/folder:rw:rizkybs' '-s' 'HDD:/share/hdd:rw:rizkybs'
